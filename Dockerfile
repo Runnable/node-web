@@ -10,5 +10,5 @@ RUN npm install
 ADD . /var/www/runnable/
 RUN npm run build
 
-EXPOSE 3000, 3001
+EXPOSE 3000 3001
 CMD ["npm start"]
