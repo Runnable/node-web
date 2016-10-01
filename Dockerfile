@@ -6,9 +6,9 @@ ADD package.json /var/www/runnable/
 WORKDIR /var/www/runnable/
 RUN npm install 
 
-# Build Application
+# Add Application Files
 ADD . /var/www/runnable/
-RUN npm run build
-
 EXPOSE 3000 3001
+
+# Build and Run Application
 CMD ["npm start"]
