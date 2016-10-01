@@ -22,10 +22,12 @@ This guide will help you setup Runnable templates for a simple Node.js web appli
 1. Choose your GitHub org.
 2. On the _Configure_ page, click on the __Create Template__ button.  
 ![node1](/images/node1.png)  
-3. Find the repository you would like to configure the template for. In this case, we are starting with a simple Python repository.  
+3. Find the repository you would like to configure the template for. In this case, we are starting with the `node-web` repository.  
 ![node2](/images/node2.png)  
 4. Choose the first option to use our simple setup guide.
+![node2](/images/node2a.png)  
 5. Give your template a name. This name will be used to generate the template URLs of all the containers that will launch from this template. Check out [this](http://https://runnable.zendesk.com/hc/en-us/articles/212802006) article for more details on URLs in Runnable.
+![node2](/images/node2b.png)  
 6. Next, you’ll be able to select your app’s Stack Type, Version and Branch for your template. Go ahead and choose Node.js for your stack type, and select the version you want to use. Make sure you choose the branch that corresponds to your team’s main integration branch (‘master’  or ‘develop’ for example).  
 ![node3](/images/node3.png)  
 6. On the next step, you can specify additional Packages, Build Commands, and the Container CMD. 
