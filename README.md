@@ -8,21 +8,14 @@ $ npm install
 $ npm start
 ```
 
-#### Development
+#### Development (live-reload server)
 ```bash
-$ npm run watch
-```
-
-## Running with Docker
-
-#### Building
-```bash
-$ docker build -t node-web .
+$ npm run dev
 ```
 
 ## Running on Runnable.io
 
-This guide will help you setup Runnable templates for a simple 2-tier Node.js application. This guide will assume that you don't have a Dockerfile and want Runnable to generate the Dockerfile for you using a simple setup guide.
+This guide will help you setup Runnable templates for a simple Node.js web application. This guide will assume that you don't have a Dockerfile and want Runnable to generate the Dockerfile for you using a simple setup guide.
 
 ### Configuring the App 
 
@@ -112,25 +105,7 @@ This is the Environment URL corresponding to the container launched from the def
 
 * If everything went well, your build will complete successfully. Anytime you run across an error that you need help with, we have developers ready to help in real-time. Click on the chat bubble on the bottom left!  
 
-#### Connecting to a DB template
-
-1. Follow one of our DB Quickstarts to add and seed a database: [MySQL](https://support.runnable.com/hc/en-us/sections/202755686-Branches) / [PostgresQL](https://support.runnable.com/hc/en-us/sections/202755686-Branches) / [MongoDB](https://support.runnable.com/hc/en-us/sections/202755686-Branches).
-
-2. In our case, we added a MySQL template.
-![node14](/images/node14.png)  
-
-3. Our repository is setup to use the environment variable "MYSQL_HOST" to reference the hostname for MYSQL. To connect our "api" repository template to the "MySQL" template, open up the "Environment Variables" tool in the "api" template configuration modal.
-
-> If you don't use Environment Variables for host discovery, you may have to modify your repository to use the Runnable template URL as your MySQL hostname. You can do this by either uploading a file using "Files & SSH Keys" or by actually modifying your repository on Github.com.
-
-4. Specify the the value for the "MYSQL_HOST" environment variable. From our article [Runnable URLs](https://support.runnable.com/hc/en-us/articles/212802006-Runnable-URLs), it is clear that we need to use MySQL's template URL to connect to it. As a convenience we provide all template URLs in the Environment Variables tab.
-![node15](/images/node15.png) ![node16](/images/node16.png) ![node17](/images/node17.png)  
-
-5. Click Save & Build.
-
-6. The "api" template is now successfully connected with the "MySQL" template!
-
-Head on over to our [Branches](https://support.runnable.com/hc/en-us/sections/202755686-Branches) section to see how to containers from your templates.
+Head on over to our [Branches](https://support.runnable.com/hc/en-us/sections/202755686-Branches) section to see how you can add your branches and start auto-isolation.
 
 ## Credits
 - https://github.com/Granze/react-starterify

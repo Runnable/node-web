@@ -50,6 +50,7 @@ gulp.task('clean', cb => {
 
 gulp.task('browserSync', () => {
   browserSync({
+    open: false,
     server: {
       baseDir: './'
     }
@@ -136,3 +137,5 @@ gulp.task('build', cb => {
   process.env.NODE_ENV = 'production'
   runSequence('clean', ['browserify', 'styles', 'htmlReplace', 'images'], cb)
 })
+
+gulp.task('serve', ['browserSync'])

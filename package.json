@@ -16,10 +16,8 @@
     "docker"
   ],
   "scripts": {
-    "start": "npm run watch",
-    "watch": "gulp watch",
-    "build": "gulp build",
-    "deploy": "gulp deploy",
+    "start": "gulp build serve",
+    "dev": "gulp watch",
     "test": "standard --verbose ./**/*.js"
   },
   "author": "Runnable, Inc.",
