@@ -10,32 +10,6 @@ body {
   padding: 0;
 }
 
-header {
-  color: #fff;
-  background: #71438f url(../images/runnable-logo.svg) no-repeat;
-  background-position: 1em;
-  background-size: 10em;
-  text-align: right;
-  h1 {
-    display: inline-block;
-    padding: 0 1.5em;
-  }
-  a {
-    display: inline-block;
-    margin: 0.6em;
-    padding: 0.6em;
-    color: #f9f9f9;
-    text-decoration: none;
-    border-radius: 3px;
-    &.active,
-    &:hover {
-      /*color: #40135D;*/
-      color: #f9f9f9;
-      background-color: #BA9CCD;
-    }
-  }
-}
-
 section {
   padding: 2em 5em;
   text-align: center;
@@ -50,7 +24,7 @@ section {
 }
 
 section h2 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 300;
   margin: 0;
 }
