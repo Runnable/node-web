@@ -16,7 +16,8 @@
     "docker"
   ],
   "scripts": {
-    "start": "gulp build serve",
+    "prestart": "gulp build",
+    "start": "gulp serve",
     "dev": "gulp watch",
     "test": "standard --verbose ./**/*.js"
   },
