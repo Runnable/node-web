@@ -1,18 +1,37 @@
 import React from 'react'
+import git from '../git.json'
 
-const App = ({ children }) => (
-  <div>
-    <section className='splash'>
-      {children || <div className='content'>
-        <h2>Hello World!</h2>
-        <p>
-          Runnable is a sandbox service that creates <b>full-stack environments</b> for your GitHub branches, so your team can integrate and test more often.
-        </p>
-      </div>}
-    </section>
-  </div>
-)
+class App extends React.Component {
 
-App.propTypes = { children: React.PropTypes.object }
+  constructor (props) {
+    super(props)
+    console.log(git.local)
+    this.state = {
+      branch: git['local.branch.current.name'],
+      commit: git['local.branch.current.shortSHA'],
+      author: git['local.branch.current.lastCommitAuthor']
+    }
+  }
+
+  render () {
+    return (
+      <div>
+        <section className='splash'>
+          <div className='content'>
+            <h2>Hello World!</h2>
+            <p>
+              Runnable is a sandbox service that creates <b>full-stack environments</b> for your GitHub branches, so your team can integrate and test more often.
+            </p>
+          </div>
+        </section>
+        <section className='info'>
+          <p>Current branch: <b>{ this.state.branch }</b></p>
+          <p>Latest commit: <b>{ this.state.commit }</b></p>
+          <p>Last Commit Author: <b>{ this.state.author }</b></p>
+        </section>
+      </div>)
+  }
+
+}
 
 export default App

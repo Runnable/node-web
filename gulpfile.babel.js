@@ -22,6 +22,9 @@ import imagemin from 'gulp-imagemin'
 import pngquant from 'imagemin-pngquant'
 import runSequence from 'run-sequence'
 import ghPages from 'gulp-gh-pages'
+import gitinfo from 'gulp-gitinfo'
+import es from 'event-stream'
+import fs from 'fs'
 
 const paths = {
   bundle: 'app.js',
@@ -98,6 +101,17 @@ gulp.task('styles', () => {
     .pipe(reload({ stream: true }))
 })
 
+gulp.task('git', () => {
+  return gitinfo()
+    .pipe(es.map((data) => {
+      fs.writeFile('src/git.json',
+        JSON.stringify(data),
+        (err) => {
+          if (err) console.log(err)
+        })
+    }))
+})
+
 gulp.task('htmlReplace', () => {
   gulp.src('index.html')
     .pipe(htmlReplace({ css: 'styles/main.css', js: 'js/app.js' }))
@@ -130,12 +144,12 @@ gulp.task('deploy', () => {
 })
 
 gulp.task('watch', cb => {
-  runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'styles', 'lint', 'images'], cb)
+  runSequence('clean', ['git', 'browserSync', 'watchTask', 'watchify', 'styles', 'lint', 'images'], cb)
 })
 
 gulp.task('build', cb => {
   process.env.NODE_ENV = 'production'
-  runSequence('clean', ['browserify', 'styles', 'htmlReplace', 'images'], cb)
+  runSequence('clean', ['git', 'browserify', 'styles', 'htmlReplace', 'images'], cb)
 })
 
 gulp.task('serve', ['browserSync'])

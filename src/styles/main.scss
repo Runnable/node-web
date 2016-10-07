@@ -15,7 +15,7 @@ section {
   text-align: center;
   font-family: -apple-system,"Helvetica Neue","Segoe UI",sans-serif;
   font-feature-settings: 'kern';
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
   line-height: 1.6;
   min-height: 80vh;
@@ -24,7 +24,7 @@ section {
 }
 
 section h2 {
-  font-size: 42px;
+  font-size: 3em;
   font-weight: 300;
   margin: 0;
 }
@@ -36,4 +36,14 @@ section h2 {
 .splash {
   background: url(../images/runnabear-jumping.png) no-repeat;
   background-position: 50% 70%;
+}
+
+.info {
+  padding: 0;
+  min-height: 0;
+}
+
+.info p {
+  font-size: 0.8em;
+  line-height: 1;
 }
