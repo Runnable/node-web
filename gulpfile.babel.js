@@ -25,7 +25,6 @@ import ghPages from 'gulp-gh-pages'
 import gitinfo from 'gulp-gitinfo'
 import es from 'event-stream'
 import fs from 'fs'
-
 const paths = {
   bundle: 'app.js',
   entry: 'src/Index.js',
@@ -52,8 +51,13 @@ gulp.task('clean', cb => {
 })
 
 gulp.task('browserSync', () => {
-  browserSync({
+  let containerUrl = process.env.RUNNABLE_CONTAINER_URL || 'localhost'
+  // let containerPort = '3000'
+
+  return browserSync({
+    ui: false,
     open: false,
+    host: `${containerUrl}`,
     server: {
       baseDir: './'
     }
